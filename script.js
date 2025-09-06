@@ -5,13 +5,13 @@ function getComputerChoice(){
 
     switch(ranChoice) {
         case 1:
-            return "Rock";
+            return "rock";
         break;
         case 2:
-            return "Paper";
+            return "paper";
         break;
         case 3:
-            return "Scissors";
+            return "scissors";
         break;
     }
     //return ranChoice;
@@ -28,4 +28,27 @@ console.groupEnd("RPS");
 function getHumanChoice(){
     return prompt("Enter Rock Paper Scissor Choice");
 }
-console.log(getHumanChoice());
+//console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+
+    humanChoice = humanChoice.toLowerCase();
+
+    if(computerChoice === humanChoice){
+        return `Human chose ${humanChoice} and Computer chose ${computerChoice} so its a tie. Try again!`;
+    }  else if( humanChoice === "rock" &&     computerChoice === "scissors" || 
+                humanChoice === "paper" &&    computerChoice === "rock" ||
+                humanChoice === "scissors" && computerChoice === "paper"){
+            humanScore += 1;
+            return `Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round!`;
+    } else{
+        computerScore += 1;
+        return `Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round!` 
+    }
+}
+console.log(playRound(getHumanChoice(), getComputerChoice()));
+console.log(humanScore);
+console.log(computerScore);
