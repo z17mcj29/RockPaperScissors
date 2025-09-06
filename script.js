@@ -17,8 +17,15 @@ function getComputerChoice(){
     //return ranChoice;
 }
 
+/*
 console.groupCollapsed("RPS");
 for(let i = 0; i < 100; i++){
 console.log(getComputerChoice());
 }
 console.groupEnd("RPS");
+*/
+
+function getHumanChoice(){
+    return prompt("Enter Rock Paper Scissor Choice");
+}
+console.log(getHumanChoice());
