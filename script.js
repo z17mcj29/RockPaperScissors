@@ -33,20 +33,22 @@ function getComputerChoice(){
     //return ranChoice;
 }
 
+    const scoreArea = document.querySelector("#scoring");
+
  function playRound(humanChoice, computerChoice){
 
         //humanChoice = humanChoice.toLowerCase();
 
         if(computerChoice === humanChoice){
-            return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice} so its a tie. Try again!`);
+                scoreArea.innerHTML +=`Human chose ${humanChoice} and Computer chose ${computerChoice} so its a tie. Try again! <br>`;
         }  else if( humanChoice === "rock" &&     computerChoice === "scissors" || 
                     humanChoice === "paper" &&    computerChoice === "rock" ||
                     humanChoice === "scissors" && computerChoice === "paper"){
                 //humanScore += 1;
-                return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round!`);
+                scoreArea.innerHTML += `Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round! <br>`;
         } else{
                 //computerScore += 1;
-            return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round!`); 
+                scoreArea.innerHTML += `Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round! <br>`; 
         }        
 }
 
@@ -69,9 +71,9 @@ console.log(getComputerChoice());
 console.groupEnd("RPS");
 */
 
-function getHumanChoice(){
-    return prompt("Enter Rock Paper Scissor Choice");
-}
+// function getHumanChoice(){
+//     return prompt("Enter Rock Paper Scissor Choice");
+// }
 //console.log(getHumanChoice());
 
 /*
@@ -80,38 +82,38 @@ console.log(humanScore);
 console.log(computerScore);
 */
 
-function playGame(rounds){
-    let humanScore = 0;
-    let computerScore = 0;
+// function playGame(rounds){
+//     let humanScore = 0;
+//     let computerScore = 0;
 
-    function playRound(humanChoice, computerChoice){
+//     function playRound(humanChoice, computerChoice){
 
-        humanChoice = humanChoice.toLowerCase();
+//         humanChoice = humanChoice.toLowerCase();
 
-        if(computerChoice === humanChoice){
-            return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice} so its a tie. Try again!`);
-        }  else if( humanChoice === "rock" &&     computerChoice === "scissors" || 
-                    humanChoice === "paper" &&    computerChoice === "rock" ||
-                    humanChoice === "scissors" && computerChoice === "paper"){
-                humanScore += 1;
-                return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round!`);
-        } else{
-            computerScore += 1;
-            return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round!`); 
-        }        
-}
-    for(let i = 0; i < rounds; i++){
-        playRound(getHumanChoice(), getComputerChoice())
+//         if(computerChoice === humanChoice){
+//             return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice} so its a tie. Try again!`);
+//         }  else if( humanChoice === "rock" &&     computerChoice === "scissors" || 
+//                     humanChoice === "paper" &&    computerChoice === "rock" ||
+//                     humanChoice === "scissors" && computerChoice === "paper"){
+//                 humanScore += 1;
+//                 return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round!`);
+//         } else{
+//             computerScore += 1;
+//             return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round!`); 
+//         }        
+// }
+//     for(let i = 0; i < rounds; i++){
+//         playRound(getHumanChoice(), getComputerChoice())
         
-        console.log(`The Current Score is human ${humanScore} and computer ${computerScore}`)
-    }
-    if(humanScore === computerScore){
-        return console.log(`Close contest! You tied with a score of ${humanScore} to ${computerScore}`);
-    } else if(humanScore > computerScore){
-        return console.log(`Nice job Human! You won with a score of ${humanScore} to ${computerScore}`);
-    } else{
-        return console.log(`Nice try Human! You tried your best but lost with a score of ${humanScore} to ${computerScore}`);
-    }
+//         console.log(`The Current Score is human ${humanScore} and computer ${computerScore}`)
+//     }
+//     if(humanScore === computerScore){
+//         return console.log(`Close contest! You tied with a score of ${humanScore} to ${computerScore}`);
+//     } else if(humanScore > computerScore){
+//         return console.log(`Nice job Human! You won with a score of ${humanScore} to ${computerScore}`);
+//     } else{
+//         return console.log(`Nice try Human! You tried your best but lost with a score of ${humanScore} to ${computerScore}`);
+//     }
     
-}
+// }
 //playGame(5);
