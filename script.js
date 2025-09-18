@@ -1,3 +1,18 @@
+
+const rockSelect = document.querySelector("#rock");
+rockSelect.addEventListener("click", () => {
+    console.log("Rock");
+});
+const paperSelect = document.querySelector("#paper");
+paperSelect.addEventListener("click", () => {
+    console.log("Paper")
+})
+const scissorsSelect = document.querySelector("#scissors");
+scissorsSelect.addEventListener("click", () => {
+    console.log("Scissors");
+})
+
+
 console.log("Hello World");
 
 function getComputerChoice(){
@@ -70,4 +85,4 @@ function playGame(rounds){
     }
     
 }
-playGame(5);
+//playGame(5);
