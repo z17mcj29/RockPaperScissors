@@ -1,4 +1,5 @@
 
+
 const rockSelect = document.querySelector("#rock");
 rockSelect.addEventListener("click", () => {
     console.log("Rock");
