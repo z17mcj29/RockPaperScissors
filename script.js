@@ -2,19 +2,19 @@
 
 const rockSelect = document.querySelector("#rock");
 rockSelect.addEventListener("click", () => {
-    console.log("Rock");
+    playRound("rock", getComputerChoice());
+    
 });
 const paperSelect = document.querySelector("#paper");
 paperSelect.addEventListener("click", () => {
-    console.log("Paper")
+    playRound("paper", getComputerChoice());
+    
 })
 const scissorsSelect = document.querySelector("#scissors");
 scissorsSelect.addEventListener("click", () => {
-    console.log("Scissors");
+    playRound("scissors", getComputerChoice());
+    
 })
-
-
-console.log("Hello World");
 
 function getComputerChoice(){
     ranChoice = Math.floor(Math.random() * 3) + 1;
@@ -32,6 +32,34 @@ function getComputerChoice(){
     }
     //return ranChoice;
 }
+
+ function playRound(humanChoice, computerChoice){
+
+        //humanChoice = humanChoice.toLowerCase();
+
+        if(computerChoice === humanChoice){
+            return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice} so its a tie. Try again!`);
+        }  else if( humanChoice === "rock" &&     computerChoice === "scissors" || 
+                    humanChoice === "paper" &&    computerChoice === "rock" ||
+                    humanChoice === "scissors" && computerChoice === "paper"){
+                //humanScore += 1;
+                return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round!`);
+        } else{
+                //computerScore += 1;
+            return console.log(`Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round!`); 
+        }        
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 console.groupCollapsed("RPS");
