@@ -1,18 +1,30 @@
 
 
+let humanScore = 0;
+let computerScore = 0;
+
 const rockSelect = document.querySelector("#rock");
 rockSelect.addEventListener("click", () => {
+    if(humanScore < 5 && computerScore < 5){
     playRound("rock", getComputerChoice());
+    updateScore();
+    }
     
 });
 const paperSelect = document.querySelector("#paper");
 paperSelect.addEventListener("click", () => {
+    if(humanScore <= 5 && computerScore <= 5){
     playRound("paper", getComputerChoice());
+    updateScore();
+    }
     
 })
 const scissorsSelect = document.querySelector("#scissors");
 scissorsSelect.addEventListener("click", () => {
+    if(humanScore <= 5 && computerScore <= 5){
     playRound("scissors", getComputerChoice());
+    updateScore();
+    }
     
 })
 
@@ -44,12 +56,36 @@ function getComputerChoice(){
         }  else if( humanChoice === "rock" &&     computerChoice === "scissors" || 
                     humanChoice === "paper" &&    computerChoice === "rock" ||
                     humanChoice === "scissors" && computerChoice === "paper"){
-                //humanScore += 1;
+                humanScore += 1;
                 scoreArea.innerHTML += `Human chose ${humanChoice} and Computer chose ${computerChoice}. You win this round! <br>`;
         } else{
-                //computerScore += 1;
+                computerScore += 1;
                 scoreArea.innerHTML += `Human chose ${humanChoice} and Computer chose ${computerChoice}. You lose this round! <br>`; 
         }        
+}
+
+function updateScore(){
+
+    scoreArea.innerHTML += `Currently you have ${humanScore} points vs the computers ${computerScore} points!!! <br>`;
+
+    if (humanScore == 5) scoreArea.innerHTML += `YOU WIN with a score of ${humanScore} to ${computerScore}!!!!!`
+    if (computerScore == 5) scoreArea.innerHTML += `YOU LOST with a score of ${humanScore} to the computers ${computerScore}! BETTER LUCK NEXT TIME!`; 
+    
+    
+
+
+    /*
+    if(Number(humanScore) == 5 || Number(computerScore) == 5){
+            if(Number(humanScore) == 5){
+            scoreArea.innerHtml += `YOU WIN with a score of ${humanScore} to ${computerScore}!!!!!`;
+        } else{
+            scoreArea.innerHTML += `YOU LOST with a score of ${humanScore} to the computers ${computerScore}! BETTER LUCK NEXT TIME!`;
+        } 
+    } else{
+        scoreArea.innerHTML += `Currently you have ${humanScore} points vs the computers ${computerScore} points!!! <br>`;
+    } 
+    */  
+    
 }
 
 
